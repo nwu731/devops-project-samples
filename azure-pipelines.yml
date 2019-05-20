@@ -18,5 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: docker build -t $(dockerId)/$(imageName) .  
+- script: 
+    docker login -u $(dockerId) -p $(pswd) https://devsecopstest1.azurecr.io
+    docker build -t $(dockerId)/$(imageName) .  
 # add options to this command to meet your needs
